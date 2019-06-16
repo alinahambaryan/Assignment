@@ -9,7 +9,7 @@
 import Foundation
 
 extension String {
-    func stripOutHtml() -> String? {
+    func stripOutHtmlAndMarkup() -> String? {
         do {
             guard let data = self.data(using: .unicode) else {
                 return nil
@@ -17,7 +17,8 @@ extension String {
             let attributed = try NSAttributedString(data: data, options: [.documentType: NSAttributedString.DocumentType.html,
                                                                           .characterEncoding: String.Encoding.utf8.rawValue],
                                                     documentAttributes: nil)
-            return attributed.string
+            let removedChars = attributed.string.replacingOccurrences(of: "[0-9-_.%,\n\t\r\\\"\'()]", with: "", options: .regularExpression, range: nil)
+            return removedChars
         } catch {
             return nil
         }

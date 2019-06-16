@@ -59,7 +59,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="nvH-gH-PV2">
-                                        <rect key="frame" x="0.0" y="60.5" width="414" height="476.5"/>
+                                        <rect key="frame" x="40" y="60.5" width="334" height="476.5"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -70,10 +70,10 @@
                                     <constraint firstItem="7hZ-FZ-bhl" firstAttribute="top" secondItem="CWw-AC-CYN" secondAttribute="top" constant="20" id="AaP-Rf-fem"/>
                                     <constraint firstAttribute="trailing" secondItem="7hZ-FZ-bhl" secondAttribute="trailing" constant="40" id="CWI-C5-kU5"/>
                                     <constraint firstAttribute="bottom" secondItem="nvH-gH-PV2" secondAttribute="bottom" id="EeM-Nl-GtF"/>
-                                    <constraint firstItem="nvH-gH-PV2" firstAttribute="leading" secondItem="CWw-AC-CYN" secondAttribute="leading" id="Oxx-vy-sX2"/>
+                                    <constraint firstItem="nvH-gH-PV2" firstAttribute="leading" secondItem="CWw-AC-CYN" secondAttribute="leading" constant="40" id="Oxx-vy-sX2"/>
                                     <constraint firstItem="7hZ-FZ-bhl" firstAttribute="leading" secondItem="CWw-AC-CYN" secondAttribute="leading" constant="40" id="Qm1-xp-360"/>
                                     <constraint firstItem="nvH-gH-PV2" firstAttribute="top" secondItem="7hZ-FZ-bhl" secondAttribute="bottom" constant="20" id="T6B-fd-Q7b"/>
-                                    <constraint firstAttribute="trailing" secondItem="nvH-gH-PV2" secondAttribute="trailing" id="UcW-tI-fiM"/>
+                                    <constraint firstAttribute="trailing" secondItem="nvH-gH-PV2" secondAttribute="trailing" constant="40" id="UcW-tI-fiM"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XrJ-8X-Ssn">

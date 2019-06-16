@@ -19,13 +19,11 @@ final class ViewController: UIViewController {
     }
     
     @IBAction private func run(_ sender: Any) {
-        let editor = TextEditor(url: "https://en.wikipedia.org/wiki/Mobile_operating_system")
+        let converter = TextConverter(url: "https://en.wikipedia.org/wiki/Mobile_operating_system")
         
-        let single = editor.word(number: 10)
-        let word = editor.every(number: 10)
-
-        singleWordLabel?.text = single
-        multipleWordTextView?.text = word
+        singleWordLabel?.text = converter.word(number: 10)
+        multipleWordTextView?.text = converter.every(number: 10)
+        wordCounterLabel?.text = converter.totalWords()
     }
     
     @IBAction private func reset(_ sender: Any) {
