@@ -8,13 +8,33 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
+final class ViewController: UIViewController {
+    @IBOutlet private var singleWordLabel: UILabel!
+    @IBOutlet private var multipleWordTextView: UITextView!
+    @IBOutlet private var wordCounterLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        clearAll()
     }
+    
+    @IBAction private func run(_ sender: Any) {
+        let editor = TextEditor(url: "https://en.wikipedia.org/wiki/Mobile_operating_system")
+        
+        let single = editor.word(number: 10)
+        let word = editor.every(number: 10)
 
-
+        singleWordLabel?.text = single
+        multipleWordTextView?.text = word
+    }
+    
+    @IBAction private func reset(_ sender: Any) {
+        clearAll()
+    }
+    
+    private func clearAll(){
+        singleWordLabel?.text = ""
+        multipleWordTextView?.text = ""
+        wordCounterLabel?.text = ""
+    }
 }
-
