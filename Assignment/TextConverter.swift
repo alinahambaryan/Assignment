@@ -37,8 +37,7 @@ final class TextConverter {
         var newString = ""
         for (index, value) in sourceArray.enumerated() {
             if index != 0 && index % number == 0 {
-                newString.append(value.trimmingCharacters(in: .whitespaces))
-                newString.append("\n")
+                newString.append("\(value)\n")
             }
         }
         return newString
@@ -48,7 +47,15 @@ final class TextConverter {
         return String(sourceArray.count)
     }
     
-    func totalUniqueWords() -> String {
-        return String(Set(sourceArray).count)
+    func wordCounts() -> String {
+        let dictionary = sourceArray.reduce(into: [:]) { counts, number in
+            counts[number, default: 0] += 1
+        }.sorted{ $0.value > $1.value }
+        
+        var printableString = ""
+        for (key, counter) in dictionary {
+            printableString.append("\(key) - \(counter) \n")
+        }
+        return printableString
     }
 }
