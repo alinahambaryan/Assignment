@@ -44,15 +44,15 @@ final class TextConverter {
     }
     
     func totalWords() -> String {
-        return String(sourceArray.count)
+        return "Total: \(sourceArray.count)"
     }
     
     func wordCounts() -> String {
-        let dictionary = sourceArray.reduce(into: [:]) { counts, number in
-            counts[number, default: 0] += 1
+        let dictionary = sourceArray.reduce(into: [:]) { words, number in
+            words[number, default: 0] += 1
         }.sorted{ $0.value > $1.value }
         
-        var printableString = ""
+        var printableString = "Unique words: \(dictionary.count)\n\n"
         for (key, counter) in dictionary {
             printableString.append("\(key) - \(counter) \n")
         }
