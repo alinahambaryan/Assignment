@@ -32,7 +32,7 @@ final class TextConverter {
     }
     
     func every(number: Int) -> String {
-        guard sourceArray.count > number
+        guard sourceArray.count > number && number > 0
             else { return ""}
         var newString = ""
         for (index, value) in sourceArray.enumerated() {
@@ -46,5 +46,9 @@ final class TextConverter {
     
     func totalWords() -> String {
         return String(sourceArray.count)
+    }
+    
+    func totalUniqueWords() -> String {
+        return String(Set(sourceArray).count)
     }
 }

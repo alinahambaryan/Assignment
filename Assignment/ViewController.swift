@@ -12,15 +12,14 @@ final class ViewController: UIViewController {
     @IBOutlet private var singleWordLabel: UILabel!
     @IBOutlet private var multipleWordTextView: UITextView!
     @IBOutlet private var wordCounterLabel: UILabel!
-    
+    let converter = TextConverter(url: "https://en.wikipedia.org/wiki/Mobile_operating_system")
+
     override func viewDidLoad() {
         super.viewDidLoad()
         clearAll()
     }
     
     @IBAction private func run(_ sender: Any) {
-        let converter = TextConverter(url: "https://en.wikipedia.org/wiki/Mobile_operating_system")
-        
         singleWordLabel?.text = converter.word(number: 10)
         multipleWordTextView?.text = converter.every(number: 10)
         wordCounterLabel?.text = converter.totalWords()
